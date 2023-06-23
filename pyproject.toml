@@ -2,20 +2,19 @@
 name = "payment-service"
 version = "0.1.0"
 description = ""
-authors = ["hk3 <example@mail.com>"]
+authors = ["dyussenov <dyusenov.aset.arm@gmail.com>"]
 readme = "README.md"
+packages = [{include = "payment_service"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 fastapi = "^0.98.0"
 uvicorn = "^0.22.0"
 python-dotenv = "^1.0.0"
+requests = "^2.31.0"
+python-multipart = "^0.0.6"
+jinja2 = "^3.1.2"
 
-
-[tool.poetry.group.dev.dependencies]
-pynvim = "^0.4.3"
-isort = "^5.12.0"
-black = "^23.3.0"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="box-inner-2">
+    <div>
+        <p class="fw-bold">Информация о платеже</p>
+        <p class="dis mb-3">Укажите платежную информацию чтобы совершить платеж</p>
+    </div>
+    <form method="POST" action="/confirm">
+        <input type="hidden" name="user_id" value="{{ user_id }}">
+        <input type="hidden" name="event_id" value="{{ event_id }}">
+        <div class="mb-3">
+            <p class="dis fw-bold mb-2">Email адрес</p>
+            <input class="form-control" type="email" value="john@doe.com">
+        </div>
+        <div>
+            <p class="dis fw-bold mb-2">Данные карты</p>
+            <div class="d-flex align-items-center justify-content-between card-atm border rounded">
+                <div class="fab fa-cc-visa ps-3"></div>
+                <input type="text" class="form-control" placeholder="Номер карты">
+                <div class="d-flex w-50">
+                    <input type="text" class="form-control px-0" placeholder="MM/YY">
+                    <input type="password" maxlength=3 class="form-control px-0" placeholder="CVV">
+                </div>
+            </div>
+            <div class="my-3 cardname">
+                <p class="dis fw-bold mb-2">Имя владельца</p>
+                <input class="form-control" type="text">
+            </div>
+            <div class="address">
+
+                <div class="d-flex flex-column dis">
+                    <button type="submit" class="btn btn-primary mt-2">Оплатить ₸{{ price }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}
+
